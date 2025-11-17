@@ -39,15 +39,6 @@ namespace MauiApp1.DB
 
             await SaveFileListMovie();
             await SaveFileDiscriminant();
-            //ListMovies movies = new ListMovies();
-            //movies.Id = ints[2];
-            //movies.IdAuthor = idAuthor;
-            //movies.IdMovies = idMovies;
-
-            //ints[2] = ints[2] + 1;
-            //listMovies.Add(movies);
-            //await SaveFileListMovie();
-            //await SaveFileDiscriminant();
 
         }
 
