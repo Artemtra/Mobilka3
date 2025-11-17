@@ -143,11 +143,11 @@ public partial class NewPage2 : ContentPage
     {
         if (SelectedAuthor == null || SelectedMovie == null)
         {
-
+            await DisplayAlert("Ошибка", "Не выбран элемент", "OK");
         }
         else
         {
-            await DisplayAlert("Ошибка", "Не выбран элемент", "OK");
+         await db.ListMoviesChange(SelectedMovieAuthor.Id, SelectedAuthor.Id, SelectedMovie.Id);
         }
         Tablichka();
     }
@@ -160,7 +160,7 @@ public partial class NewPage2 : ContentPage
         }
         else
         {
-
+          await  db.ListMoviesDel(SelectedMovieAuthor.Id);
         }
         Tablichka();
     }
