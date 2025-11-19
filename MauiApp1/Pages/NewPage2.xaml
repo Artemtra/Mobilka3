@@ -16,12 +16,13 @@
         <Button  Text="Home"  Clicked="Button_Clicked"/>
         <Button  Text="Изменить" Clicked="OnChangeClicked"/>
         <Button Text="Удалить" Clicked="OnDeleteClicked"/>
-        <ListView ItemsSource="{Binding MainTablichka}"  HasUnevenRows="True" >
+        <ListView ItemsSource="{Binding MainTablichka}"  HasUnevenRows="True" SelectedItem="{Binding SelectedMovieAuthor}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <ViewCell.View>
                             <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding Id}"/>
                                 <Label Text="{Binding Author.Name}" Margin="10,0,5,5"/>
                                 <Label Text="{Binding Author.SecondName}" Margin="10,0,5,5" />
                                 <Label Text="{Binding Author.ThrityName}" Margin="10,0,5,5" />

@@ -26,28 +26,30 @@ public partial class NewPage2 : ContentPage
     public List<Author> AuthorList { get; set; }
     public List<Movie> MovieList { get; set; }
     public void CraftTablichka()
-    {     
+    {
+        MainTablichka.Clear();
+        MoviesAuthors listMovies = new MoviesAuthors();
         if (ListMoviess == null || ListMoviess.Count == 0)
         {
             return;
         }
-        foreach (var item in ListMoviess)
+       for(int i = 0; i < ListMoviess.Count; i++)
         {
-            MoviesAuthors listMovies = new MoviesAuthors();
+            listMovies.Id = ListMoviess[i].Id;
 
 
             foreach (var author in AuthorList)
             {
-                if (author.Id == item.IdAuthor)
+                if (author.Id == ListMoviess[i].IdAuthor)
                 {
                     listMovies.Author = author;
                 }
             }
-            foreach (var author in MovieList)
+            foreach (var movie in MovieList)
             {
-                if (author.Id == item.IdMovie)
+                if (movie.Id == ListMoviess[i].IdMovie)
                 {
-                    listMovies.Movie = author;
+                    listMovies.Movie = movie;
                 }
             }
             MainTablichka.Add(listMovies);
@@ -161,6 +163,7 @@ public partial class NewPage2 : ContentPage
         else
         {
           await  db.ListMoviesDel(SelectedMovieAuthor.Id);
+            Tablichka();
         }
         Tablichka();
     }

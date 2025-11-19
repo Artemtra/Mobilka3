@@ -222,19 +222,7 @@ namespace MauiApp1.DB
             await SaveFileDiscriminant();
             await SaveFileMovie();
         }
-        public async Task AddMoviesList(int IdAuthor, int IdMovies, string Title, string FirstName, string LastName, string SecondName)
-        {
-
-            MoviesAuthors listMoviesAdd = new MoviesAuthors();
-
-
-            listMovies.Add(listMoviesAdd);
-            ints[2] = ints[2] + 1;
-            await SaveFileDiscriminant();
-            await SaveFileListMovie();
-
-
-        }
+       
 
         public async Task SaveFileMovie()
         {
